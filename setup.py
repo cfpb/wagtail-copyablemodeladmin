@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 long_description = open('README.md', 'r').read()
 
 install_requires = [
-    'wagtail>=1.13,<2.8',
+    'wagtail>=2.7,<2.9',
 ]
 
 testing_extras = [
@@ -30,18 +30,14 @@ setup(
     },
     classifiers=[
         'Framework :: Django',
-        'Framework :: Django :: 1.11',
-        'Framework :: Django :: 2.0',
-        'Framework :: Django :: 2.1',
         'Framework :: Django :: 2.2',
         'Framework :: Wagtail',
-        'Framework :: Wagtail :: 1',
         'Framework :: Wagtail :: 2',
         'License :: CC0 1.0 Universal (CC0 1.0) Public Domain Dedication',
         'License :: Public Domain',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
     ]
 )

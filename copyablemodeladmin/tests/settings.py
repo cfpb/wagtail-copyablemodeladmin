@@ -2,10 +2,6 @@ from __future__ import absolute_import, unicode_literals
 
 import os
 
-import django
-
-import wagtail
-
 
 DEBUG = True
 
@@ -32,78 +28,40 @@ DATABASES = {
     },
 }
 
-if wagtail.VERSION >= (2, 0):
-    WAGTAIL_APPS = (
-        'wagtail.contrib.forms',
-        'wagtail.contrib.modeladmin',
-        'wagtail.contrib.settings',
-        'wagtail.tests.testapp',
-        'wagtail.admin',
-        'wagtail.core',
-        'wagtail.documents',
-        'wagtail.images',
-        'wagtail.sites',
-        'wagtail.users',
-    )
+WAGTAIL_APPS = (
+    'wagtail.contrib.forms',
+    'wagtail.contrib.modeladmin',
+    'wagtail.contrib.settings',
+    'wagtail.tests.testapp',
+    'wagtail.admin',
+    'wagtail.core',
+    'wagtail.documents',
+    'wagtail.images',
+    'wagtail.sites',
+    'wagtail.users',
+)
 
-    WAGTAIL_MIDDLEWARE = (
-        'wagtail.core.middleware.SiteMiddleware',
-    )
+WAGTAIL_MIDDLEWARE = (
+    'wagtail.core.middleware.SiteMiddleware',
+)
 
-    WAGTAILADMIN_RICH_TEXT_EDITORS = {
-        'default': {
-            'WIDGET': 'wagtail.admin.rich_text.DraftailRichTextArea'
-        },
-        'custom': {
-            'WIDGET': 'wagtail.tests.testapp.rich_text.CustomRichTextArea'
-        },
-    }
-else:
-    WAGTAIL_APPS = (
-        'wagtail.contrib.modeladmin',
-        'wagtail.contrib.settings',
-        'wagtail.tests.testapp',
-        'wagtail.wagtailadmin',
-        'wagtail.wagtailcore',
-        'wagtail.wagtaildocs',
-        'wagtail.wagtailforms',
-        'wagtail.wagtailimages',
-        'wagtail.wagtailsites',
-        'wagtail.wagtailusers',
-    )
+WAGTAILADMIN_RICH_TEXT_EDITORS = {
+    'default': {
+        'WIDGET': 'wagtail.admin.rich_text.DraftailRichTextArea'
+    },
+    'custom': {
+        'WIDGET': 'wagtail.tests.testapp.rich_text.CustomRichTextArea'
+    },
+}
 
-    WAGTAIL_MIDDLEWARE = (
-        'wagtail.wagtailcore.middleware.SiteMiddleware',
-    )
-
-    WAGTAILADMIN_RICH_TEXT_EDITORS = {
-        'default': {
-            'WIDGET': 'wagtail.wagtailadmin.rich_text.HalloRichTextArea',
-        },
-        'custom': {
-            'WIDGET': 'wagtail.tests.testapp.rich_text.CustomRichTextArea'
-        },
-    }
-
-if django.VERSION >= (1, 10):
-    MIDDLEWARE = (
-        'django.middleware.common.CommonMiddleware',
-        'django.contrib.sessions.middleware.SessionMiddleware',
-        'django.middleware.csrf.CsrfViewMiddleware',
-        'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.messages.middleware.MessageMiddleware',
-        'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    ) + WAGTAIL_MIDDLEWARE
-else:
-    MIDDLEWARE_CLASSES = (
-        'django.middleware.common.CommonMiddleware',
-        'django.contrib.sessions.middleware.SessionMiddleware',
-        'django.middleware.csrf.CsrfViewMiddleware',
-        'django.contrib.auth.middleware.AuthenticationMiddleware',
-        'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
-        'django.contrib.messages.middleware.MessageMiddleware',
-        'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    ) + WAGTAIL_MIDDLEWARE
+MIDDLEWARE = (
+    'django.middleware.common.CommonMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+) + WAGTAIL_MIDDLEWARE
 
 INSTALLED_APPS = (
     'django.contrib.admin',

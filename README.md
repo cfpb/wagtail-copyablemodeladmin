@@ -16,8 +16,8 @@ CopyableModelAdmin is an extension of the [Wagtail ModelAdmin](https://docs.wagt
 ## Dependencies
 
 - Python 3.6+
-- Django 1.11+, 2.0+
-- Wagtail 1.13+, 2.0+
+- Django 2.2+
+- Wagtail 2.7+
 
 ## Installation
 
