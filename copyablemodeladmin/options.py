@@ -28,9 +28,9 @@ class CopyableModelAdminMixin:
         # Add the copy URL
         urls = urls + (
             url(
-                self.url_helper.get_action_url_pattern('copy'),
+                self.url_helper.get_action_url_pattern("copy"),
                 self.copy_view,
-                name=self.url_helper.get_action_url_name('copy')
+                name=self.url_helper.get_action_url_name("copy"),
             ),
         )
 

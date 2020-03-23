@@ -42,3 +42,22 @@ to support a reasonable set of backward compatibility with older browsers.
 Please read up on
 [our current browser support guidance](https://github.com/cfpb/development/blob/master/guides/browser-support.md)
 and follow it when contributing to this project.
+
+## Style
+
+This project uses [`black`](https://github.com/psf/black) to format code, 
+[`isort`](https://github.com/timothycrosley/isort) to format imports, 
+and [`flake8`](https://gitlab.com/pycqa/flake8).
+
+You can format code and imports by calling:
+
+```
+black flags
+isort --recursive flags
+```
+
+And you can check for style, import order, and other linting by using:
+
+```
+tox -e lint
+```

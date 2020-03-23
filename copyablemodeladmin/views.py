@@ -9,12 +9,11 @@ from wagtail.contrib.modeladmin.views import InstanceSpecificView
 
 
 class CopyViewMixin:
-
     @method_decorator(login_required)
     def dispatch(self, request, *arg, **kwargs):
         new_instance = self.model_admin.copy(self.instance)
         return redirect(
-            self.url_helper.get_action_url('edit', quote(new_instance.pk))
+            self.url_helper.get_action_url("edit", quote(new_instance.pk))
         )
 
 

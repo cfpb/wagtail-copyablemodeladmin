@@ -4,5 +4,5 @@ from wagtail.admin import urls as wagtailadmin_urls
 
 
 urlpatterns = [
-    url(r'^admin/', include(wagtailadmin_urls)),
+    url(r"^admin/", include(wagtailadmin_urls)),
 ]

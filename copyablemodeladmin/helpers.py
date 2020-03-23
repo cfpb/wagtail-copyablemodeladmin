@@ -6,18 +6,18 @@ from wagtail.contrib.modeladmin.helpers import ButtonHelper
 
 
 class CopyButtonHelperMixin:
-
     def copy_button(self, pk):
-        cn = 'button button-small button-secondary'
+        cn = "button button-small button-secondary"
         return {
-            'url': self.url_helper.get_action_url('copy', quote(pk)),
-            'label': 'Copy',
-            'classname': cn,
-            'title': 'Copy this {}'.format(self.verbose_name),
+            "url": self.url_helper.get_action_url("copy", quote(pk)),
+            "label": "Copy",
+            "classname": cn,
+            "title": "Copy this {}".format(self.verbose_name),
         }
 
-    def get_buttons_for_obj(self, obj, exclude=None, classnames_add=None,
-                            classnames_exclude=None):
+    def get_buttons_for_obj(
+        self, obj, exclude=None, classnames_add=None, classnames_exclude=None
+    ):
         if exclude is None:
             exclude = []
 
@@ -29,15 +29,12 @@ class CopyButtonHelperMixin:
             obj,
             exclude=exclude,
             classnames_add=classnames_add,
-            classnames_exclude=classnames_exclude
+            classnames_exclude=classnames_exclude,
         )
 
         # Use the edit permission to double for copying
-        if('copy' not in exclude and ph.user_can_edit_obj(usr, obj)):
-            btns.insert(
-                -1,
-                self.copy_button(pk)
-            )
+        if "copy" not in exclude and ph.user_can_edit_obj(usr, obj):
+            btns.insert(-1, self.copy_button(pk))
 
         return btns
 
